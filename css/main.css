@@ -1,17 +1,32 @@
 /* Name: Pratham Bhatiya 
 Student Number: 8960915 */
 
-/* width, margin, font, padding */
+/*body style*/
 body {
-    width: 100%;
     font: 1.125rem Arial; 
     color: #333; 
     background-color: #f0f0f0; 
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 0.5fr 1.5fr 0.2fr;
+    grid-template-areas: 
+    "header header header header"
+    "nav nav nav nav"
+    "main main main aside"
+    "footer footer footer footer";
 }
 
-/* Border */
-header h1,
-footer {
+/*header footer style*/
+header{
+    grid-area: header;
+}
+
+footer{
+    grid-area: footer;
+}
+
+header h1,footer {
     border: 0.1875rem solid #000; 
     border-radius: 0.625rem; 
     margin: 0.1875rem; 
@@ -19,65 +34,59 @@ footer {
     background: linear-gradient(to right, #ffafbd, #ffc3a0); 
 }
 
-/* font variant */
-h1,
-h2 {
+h1,h2 {
     font-variant: small-caps;
 }
 
-/* Text align */
 header h1 {
     text-align: center;
 }
 
-/* Removes effect of float */
+
 footer {
     clear: both;
 }
 
-/* Change the font size */
 footer p {
     font-size: 0.9375rem;
     color: #666; 
 }
 
-/* float, width, padding, margin, text-align */
+/*main style*/
 main {
-    float: left;
-    text-align: justify;
-    width: 60%;
+    grid-area: main;
     padding: 0.1875rem; 
     margin: 0.9375rem; 
 }
 
-/* float, width, padding, margin */
+/*aside style*/
 aside {
     border: 0.1875rem solid #000; 
-    float: right;
-    width: 30%;
+    grid-area: aside;
     padding: 0.1875rem; 
     margin: 0.9375rem; 
+    text-align: center;
     background-image: linear-gradient(to right top, #fbc2eb, #a18cd1); /* Gradient background */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* float, position, margin, content align */
-aside h2 {
-    float: right;
-    position: relative;
-    margin-right: 5rem; 
+ul li {
+    list-style-type: none;
+    line-height: 1.5;
+    text-align: left;
 }
 
-/* float, position, margin, content align */
-aside ul {
-    float: right;
-    position: relative;
-    margin-right: 11.25rem; 
+li > a {
+    text-decoration: none;
 }
 
-/* Image border */
+a:hover {
+    color: #8b4513; 
+}
+
+/* Image style */
 section figure img {
     border: 0.1875rem solid #000;
     shape-outside: circle(50%);
@@ -87,13 +96,12 @@ section figure img {
     float: left;
 }
 
-/* font variant, font weight */
 figure figcaption {
     font-weight: bold;
     font-variant: small-caps;
 }
 
-/* font family, font style, font size */
+/* quote style*/
 section q {
     clear: both;
     display: flex;
@@ -113,30 +121,13 @@ blockquote {
     clear: both;
 }
 
-/* list style type to remove bullet points, margin, padding */
-ul li {
-    list-style-type: none;
-    line-height: 1.5;
-}
-
-/* text decoration to remove underline */
-li > a {
-    text-decoration: none;
-}
-
-/* to change color of links while hovering */
-a:hover {
-    color: #8b4513; 
-}
-
 /* style for nav */
 .container {
+    grid-area: nav;
+    text-align: center;
     border: 0.1875rem solid #000; 
     border-radius: 0.625rem; 
     margin: 0.1875rem; 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     background-color: #fff; 
 }
 
@@ -164,6 +155,7 @@ nav ul li:hover ul {
     width: 12.5rem; 
 }
 
+/*style for table*/
 table {
     border-collapse: collapse;
     min-width: 25rem; 
@@ -191,6 +183,7 @@ td {
     padding: 0.3125rem; 
 }
 
+/*style for gallery*/
 main.gallery {
     width: 60%;
 }
@@ -230,23 +223,33 @@ main.gallery {
     width: 96%;
 }
 
-/* Clip-path for the first figure */
+/* Clip-path for figure */
 .gallery figure img {
     clip-path: polygon(1.11% 6.3%, 100% 0%, 99.66% 45.74%, 92.5% 97.97%, 1.94% 100.35%);
 }
 
+/*style for multimedia video*/
 iframe {
     width: 59.375rem; 
     height: 33.4375rem; 
 }
 
+/*style for contact form*/
+form{
+    border: 0.125rem solid #000;
+    border-radius: 0.625rem;
+    padding: 1rem;
+    max-width: 37.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 form label {
     display: block;
-    margin-bottom: 0.3125rem; 
+    margin-bottom: 0.3125rem;
 }
 
 form input[type="email"] {
-    width: 80%;
+    width: 92%;
     padding: 1.25rem; 
     margin-bottom: 0.625rem; 
     border-radius: 0.3125rem; 
@@ -256,15 +259,19 @@ form input[type="email"] {
 form input[type="text"],
 form input[type="date"],
 form textarea {
-    width: 80%;
+    width: 92%;
     padding: 1.25rem; 
     margin-bottom: 0.625rem; 
     border-radius: 0.3125rem; 
     border: 0.0625rem solid #ccc;
 }
 
+form textarea{
+    box-sizing: border-box;
+}
+
 form select {
-    width: 85%;
+    width: calc(100% - 0.625rem);
     padding: 1.25rem; 
     margin-bottom: 0.625rem; 
     border-radius: 0.3125rem; 
@@ -285,7 +292,7 @@ form input[type="submit"]:hover {
     background-color: #000;
 }
 
-
+/*style for responsive design*/
 @media screen and (max-width: 56.25rem) {
     body {
         font-size: 0.9rem; 
