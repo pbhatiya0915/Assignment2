@@ -43,13 +43,11 @@ header h1 {
 }
 
 
-footer {
-    clear: both;
-}
 
 footer p {
     font-size: 0.9375rem;
-    color: #666; 
+    color: black;
+    font-weight: bold; 
 }
 
 /*main style*/
@@ -66,7 +64,6 @@ aside {
     padding: 0.1875rem; 
     margin: 0.9375rem; 
     text-align: center;
-    background-image: linear-gradient(to right top, #fbc2eb, #a18cd1); /* Gradient background */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -80,10 +77,13 @@ ul li {
 
 li > a {
     text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: larger ;
 }
 
 a:hover {
-    color: #8b4513; 
+    color: red; 
 }
 
 /* Image style */
@@ -91,7 +91,7 @@ section figure img {
     border: 0.1875rem solid #000;
     shape-outside: circle(50%);
     clip-path: circle(50%);
-    margin-right: 0.9375rem; 
+    margin-right: 0.9375rem;    
     margin-left: 0px;
     float: left;
 }
@@ -103,7 +103,6 @@ figure figcaption {
 
 /* quote style*/
 section q {
-    clear: both;
     display: flex;
     flex-direction: row;
     padding: 0.125rem; 
@@ -111,10 +110,6 @@ section q {
     font-style: italic;
     font-size: 1.25rem; 
     color: #800080; 
-}
-
-blockquote {
-    margin: 0%;
 }
 
 .quotes h2 {
@@ -137,9 +132,8 @@ nav ul li {
 }
 
 nav ul li a {
-    display: block;
     padding: 0.3125rem 0.9375rem; 
-    color: #000; 
+    color: #000;    
 }
 
 /* Dropdown menu */
@@ -184,8 +178,8 @@ td {
 }
 
 /*style for gallery*/
-main.gallery {
-    width: 60%;
+.gallery {
+    width: 100%;
 }
 
 .gallery h2 {
@@ -271,7 +265,7 @@ form textarea{
 }
 
 form select {
-    width: calc(100% - 0.625rem);
+    width: 98.5%;
     padding: 1.25rem; 
     margin-bottom: 0.625rem; 
     border-radius: 0.3125rem; 
@@ -279,7 +273,6 @@ form select {
 }
 
 form input[type="submit"] {
-    display: flex;
     background-color: #333;
     color: #fff;
     border: none;
@@ -303,7 +296,7 @@ form input[type="submit"]:hover {
 }
 
 /* Media query for larger screens */
-@media screen and (min-width: 75rem) {
+@media screen and (min-width: 56.25rem) {
     body {
         font-size: 1.1rem;
     }
